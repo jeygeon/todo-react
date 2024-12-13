@@ -1,0 +1,211 @@
+/* 공통 스타일 */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9; /* 배경색 */
+}
+
+/* 앱 전체 스타일 */
+.App {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 스타일 */
+.header {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #4CAF50, #81C784);
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+/* TODO 입력 섹션 스타일 */
+.todo-input-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.todo-comment {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+.todo-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.todo-input input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+}
+
+.todo-input input[type="button"] {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 텍스트 입력창 클릭 시 스타일 */
+.todo-input input[type="text"]:focus {
+  outline: none; /* 기본 브라우저 outline 제거 */
+  border-color: #4CAF50; /* 초록색 테두리 */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* 초록색 그림자 */
+  background-color: #f9f9f9; /* 클릭 시 배경색 살짝 밝게 */
+}
+
+.todo-input input[type="button"] {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 버튼 클릭 시 스타일 */
+.todo-input input[type="button"]:hover {
+  background-color: #388E3C; /* 버튼 배경을 어두운 초록색으로 */
+  cursor: pointer; /* 마우스를 올리면 포인터로 변경 */
+}
+
+/* 버튼 클릭 시 효과 */
+.todo-input input[type="button"]:active {
+  transform: scale(0.98); /* 클릭 시 버튼이 살짝 눌리는 효과 */
+  background-color: #2c6f2d; /* 버튼이 눌리면 색상 어두워짐 */
+}
+
+/* 테이블 스타일 */
+.todo-table-section {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed; /* 고정된 테이블 레이아웃 */
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table thead {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table td:nth-child(2) {
+  width:550px; /* 고정된 너비 */
+  white-space: nowrap; /* 줄 바꿈 방지 */
+  overflow: hidden; /* 넘치는 내용 숨김 */
+  text-overflow: ellipsis; /* 넘치는 내용 ... 표시 */
+}
+
+table td:nth-child(1) {
+  width: 20px; /* 고정된 너비 */
+}
+
+table td:nth-child(4) {
+  width: 40px; /* 고정된 너비 */
+}
+
+table td:nth-child(4):hover {
+  cursor: pointer;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+.check td {
+  text-decoration: line-through;
+  color: #d3c1c1
+}
+
+/* 푸터 스타일 */
+.footer {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* 기본 스타일 */
+.checkboxContainer {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkboxContainer input {
+  display: none; /* 기본 체크박스 숨기기 */
+}
+
+.checkboxContainer .checkmark {
+  position: absolute;
+  top: -16px;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #4CAF50; /* 경계선 색 */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* 체크박스를 클릭했을 때 색 채우기 */
+.checkboxContainer input:checked + .checkmark {
+  background-color: #4CAF50; /* 체크 시 배경색 */
+  border-color: #388E3C; /* 체크 시 테두리 색 */
+}
+
+/* 체크박스 안에 체크 마크 추가 */
+.checkboxContainer input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* 체크박스를 hover했을 때 테두리 색 변경 */
+.checkboxContainer:hover .checkmark {
+  border-color: #81C784;
+}
